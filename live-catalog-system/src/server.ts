@@ -5,12 +5,15 @@ import { z } from 'zod';
 
 
 // Initialize core fastify instance with strict logging patterns
-const fastify = Fastify({ 
-  logger: {
-    transport: {
-      target: 'pino-pretty', // Makes local terminal logs readable and structured
-    }
-  } 
+const fastify = Fastify({
+  logger:
+    process.env.NODE_ENV === "production"
+      ? true
+      : {
+          transport: {
+            target: "pino-pretty",
+          },
+        },
 });
 
 const prisma = new PrismaClient();
