@@ -6,7 +6,8 @@
   "main": "dist/index.js",
   "scripts": {
     "seed": "node --loader ts-node/esm prisma/seed.ts",
-    "dev": "node --loader ts-node/esm src/server.ts"
+    "dev": "node --loader ts-node/esm src/server.ts",
+    "build": "tsc"
   },
   "dependencies": {
     "@fastify/cors": "^9.0.1",
