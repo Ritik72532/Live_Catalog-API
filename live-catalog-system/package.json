@@ -1,0 +1,24 @@
+{
+  "name": "live-catalog-system",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "High-performance cursor-paginated backend catalog",
+  "main": "dist/index.js",
+  "scripts": {
+    "seed": "node --loader ts-node/esm prisma/seed.ts",
+    "dev": "node --loader ts-node/esm src/server.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@prisma/client": "^6.19.3",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.26.2",
+    "prisma": "^6.19.3",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  }
+}
