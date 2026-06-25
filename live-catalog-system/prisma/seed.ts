@@ -29,7 +29,7 @@ async function main() {
   }
 
   // 2. Define the size of the batch you want to add EVERY time you run the script
-  const itemsToAdd = 20; // You can change this to 5000, 50000, etc.
+  const itemsToAdd = 20000; // You can change this to 5000, 50000, etc.
   const batch = [];
   
   // Use the exact current real-world clock time right now
