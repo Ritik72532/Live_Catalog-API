@@ -26,12 +26,13 @@ await fastify.register(cors, { origin: '*' });
 const GetProductsQuerySchema = z.object({
   category: z.string().optional(),
   limit: z.string()
-    .transform((val: string) => parseInt(val, 10)) // Added explicit ': string' type definition here
-    .pipe(z.number().min(1).max(100))
-    .default(20),
+    .default('20') // Set the string fallback default FIRST
+    .transform((val: string) => parseInt(val, 10)) // Then convert down to a numeric int type safely
+    .pipe(z.number().min(1).max(100)),
   nextCreatedAt: z.string().datetime({ message: "Invalid ISO timestamp string" }).optional(),
   nextId: z.string().uuid({ message: "Invalid unique asset identifier format" }).optional(),
 });
+
 
 
 
